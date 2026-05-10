@@ -142,7 +142,7 @@ function Sidebarpart() {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden">
+    <div className="sticky top-0 flex h-[100dvh] shrink-0 overflow-hidden">
       <div className="relative flex h-screen flex-col items-stretch justify-between bg-sidebar text-sidebar-text border-r border-sidebar-divider px-2 pt-2">
         <nav className="flex flex-col gap-0.5 items-stretch">
           <Link to="/home" className="flex flex-col items-center py-2 rounded-md">
@@ -219,7 +219,7 @@ function Sidebarpart() {
           </button>
         </div>
 
-        <div className="flex flex-col flex-1 min-h-0 slack-scroll slack-scroll-dark overflow-y-auto px-1">
+        <div className="flex flex-col flex-1 min-h-0 px-1">
           {/* Channels Section */}
           <div className="pt-1 flex flex-col min-h-0 flex-[0.95]">
             <div className="slack-section-header">
