@@ -228,7 +228,7 @@ function Sidebarpart() {
                 <span className="slack-unread">{totalChannelUnread}</span>
               )}
             </div>
-            <ul className="flex-1 min-h-0">
+            <ul className="flex-1 min-h-0 overflow-y-auto slack-scroll slack-scroll-dark">
               {channels?.map((channel) => {
                 const isActive = location.pathname === `/channelchat/${channel._id}`;
                 return (
@@ -264,7 +264,7 @@ function Sidebarpart() {
             <div className="slack-section-header">
               <span>Direct messages</span>
             </div>
-            <ul className="flex-1 min-h-0">
+            <ul className="flex-1 min-h-0 overflow-y-auto slack-scroll slack-scroll-dark">
               {employees
                 ?.filter((user) => user.lastMessageTime)
                 .map((user, i) => {
