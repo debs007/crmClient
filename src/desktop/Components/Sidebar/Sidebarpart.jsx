@@ -85,8 +85,24 @@ function Sidebarpart() {
       channel();
     });
 
+    const onNewMessage = (msg) => {
+      if (!msg?.channelId) return;
+      setChannels((prev) => {
+        const idx = prev.findIndex(
+          (c) => c._id?.toString() === msg.channelId?.toString()
+        );
+        if (idx <= 0) return prev;
+        const updated = [...prev];
+        const [moved] = updated.splice(idx, 1);
+        updated.unshift({ ...moved, lastMessageTime: new Date().toISOString() });
+        return updated;
+      });
+    };
+    socket.on("new-channel-message", onNewMessage);
+
     return () => {
       socket.off("updateUnread");
+      socket.off("new-channel-message", onNewMessage);
       socket.disconnect();
     };
   }, []);
