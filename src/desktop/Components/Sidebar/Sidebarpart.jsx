@@ -165,8 +165,8 @@ function Sidebarpart() {
           <Link to="/home" className="flex flex-col items-center py-2 rounded-md">
             <img src={logo} alt="" className="h-[44px] w-[44px]" />
           </Link>
-          <Link to="/home" className="flex flex-col items-center py-2 rounded-md hover:bg-sidebar-hover text-sidebar-muted hover:text-white">
-            <img src={home} alt="" className="h-[20px] w-[20px] invert opacity-80" />
+          <Link to="/home" className="flex flex-col items-center py-2 rounded-md hover:bg-sidebar-hover text-white">
+            <img src={home} alt="" className="h-[20px] w-[20px] invert" />
             <p className="text-[11px] font-semibold mt-0.5">Home</p>
           </Link>
         </nav>
@@ -320,7 +320,7 @@ function Sidebarpart() {
             </ul>
             <button
               type="button"
-              className="slack-row text-sidebar-muted w-full mt-1"
+              className="slack-row text-sidebar-text/60 hover:text-white w-full mt-1"
               onClick={handleCowrokers}
             >
               <span className="w-[18px] h-[18px] rounded-sm bg-sidebar-hover flex items-center justify-center text-sidebar-muted">+</span>
